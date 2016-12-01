@@ -1,15 +1,15 @@
 name := "cronish"
 
-organization := "com.github.philcali"
+organization := "com.frograms"
 
-version := "0.1.3"
+version := "0.1.4-FROGRAMS"
 
 parallelExecution in Test := false
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.8"
 
 crossScalaVersions := Seq(
-  "2.11.0",
+  "2.11.8",
   "2.10.3",
   "2.9.2", "2.9.1", "2.9.0-1", "2.9.0"
 )
@@ -22,7 +22,7 @@ scalacOptions <++= scalaVersion map {
   case _ => Nil
 }
 
-libraryDependencies <+= (organization) (_ %% "scalendar" % "0.1.4")
+libraryDependencies += ("com.github.philcali" %% "scalendar" % "0.1.4")
 
 libraryDependencies <++= scalaVersion {
   case sv if sv startsWith "2.11" => Seq(
@@ -55,7 +55,7 @@ publishArtifact in Test := false
 pomIncludeRepository := { x => false }
 
 pomExtra := (
-  <url>https://github.com/philcali/cronish</url>
+  <url>https://github.com/frograms/cronish</url>
   <licenses>
     <license>
       <name>The MIT License</name>
@@ -64,14 +64,14 @@ pomExtra := (
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:philcali/cronish.git</url>
-    <connection>scm:git:git@github.com:philcali/cronish.git</connection>
+    <url>git@github.com:frograms/cronish.git</url>
+    <connection>scm:git:git@github.com:frograms/cronish.git</connection>
   </scm>
   <developers>
     <developer>
-      <id>philcali</id>
-      <name>Philip Cali</name>
-      <url>http://philcalicode.blogspot.com/</url>
+      <id>frograms</id>
+      <name>Frograms inc.</name>
+      <url>http://www.frograms.com/</url>
     </developer>
   </developers>
 )
