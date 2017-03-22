@@ -6,7 +6,7 @@ import scala.util.parsing.combinator._
 import scalendar._
 
 trait CronParsers extends RegexParsers {
-  def monthnames = (1 to 12).map(Month(_).toString)
+  def monthnames: IndexedSeq[String] = (1 to 12).map(Month(_).toString)
 
   def daynames = (1 to 7).map(Day(_).toString)
 
